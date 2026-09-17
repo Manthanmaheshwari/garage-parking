@@ -1,0 +1,14 @@
+{
+  "name": "parkpulse-monorepo",
+  "version": "2.4.0",
+  "private": true,
+  "scripts": {
+    "dev": "npx concurrently \"npm run dev --prefix client\" \"python -m uvicorn server.main:app --host 127.0.0.1 --port 8000 --reload\"",
+    "start": "npx concurrently \"npm run dev --prefix client\" \"python -m uvicorn server.main:app --host 127.0.0.1 --port 8000\"",
+    "build": "npm run build --prefix client",
+    "seed": "python -m server.seed"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
